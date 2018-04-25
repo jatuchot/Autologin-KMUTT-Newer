@@ -60,7 +60,7 @@ if(window.location.href.includes("newassess-std/AssessSTD.aspx")){
 		z++;
 	}
 	for(i=0;i<z;i++){
-		ran = Math.floor((Math.random() * 3))
+		ran = Math.floor(Math.random() * 3)+ 1;
 		document.getElementById('RBL'+[i]+'_'+ran).checked = true;
 	}
 	document.getElementById('COMMENT').value = "-";
