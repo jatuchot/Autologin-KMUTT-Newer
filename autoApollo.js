@@ -50,6 +50,7 @@ if(window.location.href.includes("newassess-std/AssessSTD.aspx")){
 	var y = document.getElementById("tblDetailCaption").rows.length;
 	var a = 0;
 	var z = 0;
+	var ran = 0;
 	while(1){
 		a = document.getElementById("RBL"+[z]);
 		if(a == null)
@@ -59,12 +60,8 @@ if(window.location.href.includes("newassess-std/AssessSTD.aspx")){
 		z++;
 	}
 	for(i=0;i<z;i++){
-		if(i % 3){
-			document.getElementById('RBL'+[i]+'_1').checked = true;
-		}
-		else{
-			document.getElementById('RBL'+[i]+'_2').checked = true;
-		}
+		ran = Math.floor((Math.random() * 3))
+		document.getElementById('RBL'+[i]+'_'+ran).checked = true;
 	}
 	document.getElementById('COMMENT').value = "-";
 	document.getElementById('SAVE').click();
