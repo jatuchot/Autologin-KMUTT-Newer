@@ -1,0 +1,43 @@
+{
+    "manifest_version": 2,
+    "name": "Autologin-NewAcis",
+    "version": "1.5",
+    "author": "Kirei,Chang",
+
+    "description": "Autologin for newacis website/stdmobile/gappsauthen/apollo",
+
+    "icons": {
+    "48": "48x48icon.png"
+    },
+
+    "content_scripts": [
+    {
+        "matches": ["*://sinfo.kmutt.ac.th/*","*://libmod3.lib.kmutt.ac.th/cas/login?service=http%3A%2F%2Fapp.myle.kmutt.ac.th%2Fhome%2F","*://sso.c4ed.kmutt.ac.th/*"],
+        "js": ["autoFull.js"]
+    },
+    {
+        "matches": ["*://accounts.kmutt.ac.th/gappsauthen/*"],
+        "js": ["autoGG.js"]
+    },
+    {
+        "matches": ["*://apollo.kmutt.ac.th/*"],
+        "js": ["autoApollo.js"]
+    },
+    {
+        "matches": ["*://www.myle.kmutt.ac.th/*","*://www.leb2.kmutt.ac.th/*" , "*://leb2.kmutt.ac.th/*"],
+        "js": ["redirectMyle.js"]
+    },
+    {
+        "matches": ["*://sinfo.kmutt.ac.th/NewAcis/secured/welcome.jsf"],
+        "js": ["enroll.js"]
+    },
+    {
+        "matches": ["*://sinfo.kmutt.ac.th/stdmobile/mobilePages/secured/home.xhtml"],
+        "js": ["redirectGrade.js"]
+    },
+    {
+        "matches": ["*://sinfo.kmutt.ac.th/stdmobile/mobilePages/secured/academicRecordPage.xhtml"],
+        "js": ["grade.js"]
+    }
+    ]
+} 
